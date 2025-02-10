@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, Building } from 'lucide-react';
+import { Diamond } from 'lucide-react';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -43,36 +43,10 @@ const Contact = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="space-y-8"
+            className="flex justify-center items-center"
           >
-            <div className="flex items-center space-x-4">
-              <div className="p-3 bg-accent/5 rounded-full">
-                <Mail className="w-6 h-6 text-accent" />
-              </div>
-              <div>
-                <h3 className="font-semibold">Email</h3>
-                <p className="text-gray-600">contact@example.com</p>
-              </div>
-            </div>
-            
-            <div className="flex items-center space-x-4">
-              <div className="p-3 bg-accent/5 rounded-full">
-                <Phone className="w-6 h-6 text-accent" />
-              </div>
-              <div>
-                <h3 className="font-semibold">Phone</h3>
-                <p className="text-gray-600">+1 (555) 123-4567</p>
-              </div>
-            </div>
-            
-            <div className="flex items-center space-x-4">
-              <div className="p-3 bg-accent/5 rounded-full">
-                <Building className="w-6 h-6 text-accent" />
-              </div>
-              <div>
-                <h3 className="font-semibold">Office</h3>
-                <p className="text-gray-600">123 Business Ave, Suite 100<br />San Francisco, CA 94107</p>
-              </div>
+            <div className="p-8 bg-accent/5 rounded-full">
+              <Diamond className="w-24 h-24 text-accent animate-pulse" />
             </div>
           </motion.div>
 
