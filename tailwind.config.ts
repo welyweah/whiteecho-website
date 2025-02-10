@@ -31,8 +31,8 @@ export default {
           muted: "#f1f1f1",
         },
         accent: {
-          DEFAULT: "#0EA5E9",
-          soft: "#e0f2fe",
+          DEFAULT: "#8B5CF6",
+          soft: "#D6BCFA",
         },
       },
       keyframes: {
@@ -64,3 +64,4 @@ export default {
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
