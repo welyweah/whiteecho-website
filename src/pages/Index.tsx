@@ -421,7 +421,6 @@ const Index = () => {
             </motion.p>
           </div>
           <div className="relative">
-            <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-32 bg-gradient-to-r from-transparent via-accent/5 to-transparent blur-2xl"></div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -446,7 +445,7 @@ const Index = () => {
                     <img
                       src={partner.logo}
                       alt={partner.alt}
-                      className={`w-full h-full object-contain ${partner.className || ''} opacity-70 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110`}
+                      className={`w-full h-full object-contain ${partner.className || ''}`}
                     />
                   </div>
                 </motion.div>
