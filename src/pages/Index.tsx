@@ -205,7 +205,7 @@ const Index = () => {
                 <button className="px-8 py-4 bg-gradient-to-r from-[#398ae6] to-[#17d9d0] text-white rounded-full font-medium hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent/25">
                   Get Started
                 </button>
-                <button className="px-8 py-4 border-2 border-transparent bg-gradient-to-r from-[#398ae6] to-[#17d9d0] text-transparent bg-clip-text hover:opacity-90 rounded-full font-medium hover:bg-accent/5 transition-all duration-300 relative before:absolute before:inset-0 before:rounded-full before:border-2 before:border-transparent before:bg-gradient-to-r before:from-[#398ae6] before:to-[#17d9d0] before:content-[''] before:-z-10 before:bg-clip-border">
+                <button className="px-8 py-4 bg-white border-2 border-transparent bg-gradient-to-r from-[#398ae6] to-[#17d9d0] text-transparent bg-clip-text hover:opacity-90 rounded-full font-medium hover:bg-gray-50 transition-all duration-300 relative before:absolute before:inset-0 before:rounded-full before:border-2 before:border-transparent before:bg-gradient-to-r before:from-[#398ae6] before:to-[#17d9d0] before:content-[''] before:-z-10 before:bg-clip-border">
                   Watch Demo
                 </button>
               </div>
