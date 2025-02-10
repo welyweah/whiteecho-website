@@ -405,7 +405,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl text-gray-600 max-w-2xl mx-auto"
+              className="text-xl text-gray-300 max-w-2xl mx-auto"
             >
               Trusted by leading organizations worldwide
             </motion.p>
@@ -431,12 +431,12 @@ const Index = () => {
                   }}
                   className="group relative w-full max-w-[160px] aspect-[3/2] p-4"
                 >
-                  <div className="absolute inset-0 bg-white/50 backdrop-blur-xl rounded-xl shadow-lg border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-white/10 backdrop-blur-xl rounded-xl shadow-lg border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative h-full w-full flex items-center justify-center">
                     <img
                       src={partner.logo}
                       alt={partner.alt}
-                      className={`w-full h-full object-contain ${partner.className || ''} opacity-70 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110`}
+                      className={`w-full h-full object-contain ${partner.className || ''} opacity-70 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 brightness-200`}
                     />
                   </div>
                 </motion.div>
