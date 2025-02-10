@@ -12,31 +12,40 @@ import { removeBackground, loadImage } from '../utils/backgroundRemoval';
 const Contact = () => {
   const { toast } = useToast();
   const [processedLogoUrl, setProcessedLogoUrl] = useState<string | null>(null);
+  const [isProcessing, setIsProcessing] = useState(true);
 
   useEffect(() => {
     const processLogo = async () => {
       try {
-        // Use an existing image from the project
-        const response = await fetch('/lovable-uploads/9cef9d35-b323-4777-911c-9700c5dc94df.png');
+        setIsProcessing(true);
+        const imagePath = '/lovable-uploads/9cef9d35-b323-4777-911c-9700c5dc94df.png';
+        
+        // First verify the image exists
+        const response = await fetch(imagePath);
+        if (!response.ok) {
+          throw new Error(`Failed to load image: ${response.statusText}`);
+        }
+        
         const blob = await response.blob();
-        
-        // Load the image
         const img = await loadImage(blob);
-        
-        // Remove background
         const processedBlob = await removeBackground(img);
-        
-        // Create URL for the processed image
         const processedUrl = URL.createObjectURL(processedBlob);
         setProcessedLogoUrl(processedUrl);
       } catch (error) {
         console.error('Error processing logo:', error);
+        // If there's an error, we'll use the original image
+        setProcessedLogoUrl('/lovable-uploads/9cef9d35-b323-4777-911c-9700c5dc94df.png');
+        toast({
+          title: "Notice",
+          description: "Using original image as fallback",
+        });
+      } finally {
+        setIsProcessing(false);
       }
     };
 
     processLogo();
 
-    // Cleanup function
     return () => {
       if (processedLogoUrl) {
         URL.revokeObjectURL(processedLogoUrl);
@@ -81,7 +90,7 @@ const Contact = () => {
               <img 
                 src={processedLogoUrl || '/lovable-uploads/9cef9d35-b323-4777-911c-9700c5dc94df.png'}
                 alt="Logo" 
-                className="w-[400px] h-[400px] transform hover:scale-105 transition-all duration-300"
+                className={`w-[400px] h-[400px] transform hover:scale-105 transition-all duration-300 ${isProcessing ? 'opacity-50' : 'opacity-100'}`}
               />
             </div>
           </motion.div>
