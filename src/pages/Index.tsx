@@ -390,20 +390,20 @@ const Index = () => {
               Trusted by leading organizations worldwide
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
+          <div className="flex flex-nowrap overflow-x-auto justify-center items-center gap-12 pb-4">
             {partners.map((partner) => (
               <motion.div
                 key={partner.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="relative group"
+                className="relative group flex-shrink-0"
               >
-                <div className="aspect-[3/2] relative overflow-hidden rounded-xl bg-white/80 backdrop-blur-sm p-6 border border-accent/10 hover:border-accent/20 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <div className="h-16 w-auto relative overflow-hidden p-2">
                   <img
                     src={partner.logo}
                     alt={partner.alt}
-                    className={`w-full h-full object-contain ${partner.className || ''} opacity-70 group-hover:opacity-100 transition-opacity duration-300`}
+                    className={`h-full w-auto object-contain ${partner.className || ''} opacity-70 group-hover:opacity-100 transition-opacity duration-300`}
                   />
                 </div>
               </motion.div>
