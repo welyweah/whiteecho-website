@@ -55,7 +55,7 @@ const useCases = [
 
 const UseCases = () => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-b from-white/50 to-primary-soft/50">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 relative bg-primary-soft">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 space-y-4">
           <motion.h2 
@@ -81,51 +81,35 @@ const UseCases = () => {
             align: "center",
             loop: true,
           }}
-          className="w-full max-w-5xl mx-auto perspective-1000"
+          className="w-full max-w-3xl mx-auto"
         >
-          <CarouselContent className="-ml-2 md:-ml-4">
+          <CarouselContent>
             {useCases.map((useCase, index) => (
-              <CarouselItem 
-                key={index} 
-                className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3 relative"
-              >
+              <CarouselItem key={index} className="w-full">
                 <motion.div
-                  initial={{ opacity: 0, rotateY: 45 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ 
                     opacity: 1, 
-                    rotateY: 0,
+                    y: 0,
                     transition: {
-                      duration: 0.8,
-                      delay: index * 0.1,
-                      type: "spring",
-                      stiffness: 100
+                      duration: 0.5,
+                      delay: index * 0.1
                     }
                   }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    rotateY: 10,
-                    transition: { 
-                      duration: 0.3
-                    }
-                  }}
-                  className="h-full p-6 rounded-xl bg-white/90 backdrop-blur-sm shadow-lg 
-                           border border-white/20 transform-gpu"
-                  style={{
-                    transformStyle: "preserve-3d",
-                    perspective: "1000px"
-                  }}
+                  className="p-8 rounded-xl bg-white border border-gray-100 shadow-sm
+                           transition-all duration-300 mx-auto max-w-2xl"
                 >
                   <motion.div 
-                    className="flex justify-center items-center"
-                    whileHover={{ scale: 1.1, rotateZ: 5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                    className="flex justify-center items-center mb-6"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
                   >
                     {useCase.icon}
                   </motion.div>
-                  <h3 className="text-lg font-semibold mb-3 text-gray-800">
+                  <h3 className="text-2xl font-semibold mb-4 text-gray-800">
                     {useCase.title}
                   </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-lg text-gray-600 leading-relaxed">
                     {useCase.description}
                   </p>
                 </motion.div>
@@ -133,12 +117,12 @@ const UseCases = () => {
             ))}
           </CarouselContent>
           <div className="hidden sm:block">
-            <CarouselPrevious className="-left-12 lg:-left-16 h-12 w-12 rounded-full 
-                                      bg-white/80 shadow-lg hover:bg-white
-                                      backdrop-blur-sm border border-white/20" />
-            <CarouselNext className="-right-12 lg:-right-16 h-12 w-12 rounded-full 
-                                   bg-white/80 shadow-lg hover:bg-white
-                                   backdrop-blur-sm border border-white/20" />
+            <CarouselPrevious className="-left-12 h-10 w-10 rounded-full 
+                                      bg-white hover:bg-gray-50
+                                      border border-gray-200" />
+            <CarouselNext className="-right-12 h-10 w-10 rounded-full 
+                                   bg-white hover:bg-gray-50
+                                   border border-gray-200" />
           </div>
         </Carousel>
       </div>
@@ -147,3 +131,4 @@ const UseCases = () => {
 };
 
 export default UseCases;
+
