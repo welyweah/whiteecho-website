@@ -130,7 +130,7 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-soft relative overflow-hidden">
       <FloatingShapes />
       
-      {/* Top Menu - Updated with better blur and positioning */}
+      {/* Top Menu */}
       <div className="fixed top-0 left-0 right-0 bg-white/70 backdrop-blur-xl z-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
@@ -140,7 +140,7 @@ const Index = () => {
               className="h-10 hover:opacity-90 transition-opacity"
             />
             
-            {/* Desktop Menu - Enhanced with better spacing */}
+            {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
               <NavigationMenu>
                 <NavigationMenuList className="space-x-2">
@@ -172,12 +172,12 @@ const Index = () => {
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
-              <button className="px-6 py-2.5 bg-accent text-white rounded-full text-sm font-medium hover:bg-accent/90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent/25">
+              <button className="px-6 py-2.5 bg-gradient-to-r from-[#398ae6] to-[#17d9d0] text-white rounded-full text-sm font-medium hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent/25">
                 Get Started
               </button>
             </div>
 
-            {/* Mobile Menu Button - Enhanced with better hover */}
+            {/* Mobile Menu Button */}
             <button className="md:hidden p-2 hover:bg-accent/5 rounded-lg transition-colors">
               <Menu className="w-6 h-6" />
             </button>
@@ -185,7 +185,7 @@ const Index = () => {
         </div>
       </div>
       
-      {/* Hero Section - Updated with bigger diamond and network web */}
+      {/* Hero Section */}
       <section className="relative pt-40 lg:pt-48 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -202,10 +202,10 @@ const Index = () => {
                 Experience the next generation of artificial intelligence, designed to transform your business and accelerate growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="px-8 py-4 bg-accent text-white rounded-full font-medium hover:bg-accent/90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent/25">
+                <button className="px-8 py-4 bg-gradient-to-r from-[#398ae6] to-[#17d9d0] text-white rounded-full font-medium hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent/25">
                   Get Started
                 </button>
-                <button className="px-8 py-4 border-2 border-accent text-accent rounded-full font-medium hover:bg-accent/5 transition-all duration-300">
+                <button className="px-8 py-4 border-2 border-transparent bg-gradient-to-r from-[#398ae6] to-[#17d9d0] text-transparent bg-clip-text hover:opacity-90 rounded-full font-medium hover:bg-accent/5 transition-all duration-300 relative before:absolute before:inset-0 before:rounded-full before:border-2 before:border-transparent before:bg-gradient-to-r before:from-[#398ae6] before:to-[#17d9d0] before:content-[''] before:-z-10 before:bg-clip-border">
                   Watch Demo
                 </button>
               </div>
@@ -227,7 +227,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Customer Use Cases Section - Enhanced carousel design */}
+      {/* Customer Use Cases Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-b from-white/50 to-primary-soft/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
@@ -269,7 +269,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section - Enhanced card design */}
+      {/* Features Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
@@ -295,7 +295,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Newsletter Section - Enhanced design */}
+      {/* Newsletter Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-7xl mx-auto">
           <div className="relative">
