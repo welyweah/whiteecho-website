@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,9 +7,42 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { removeBackground, loadImage } from '../utils/backgroundRemoval';
 
 const Contact = () => {
   const { toast } = useToast();
+  const [processedLogoUrl, setProcessedLogoUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    const processLogo = async () => {
+      try {
+        // Fetch the original image
+        const response = await fetch('/lovable-uploads/82b5d2d5-0952-4067-aaac-ab635cd345a7.png');
+        const blob = await response.blob();
+        
+        // Load the image
+        const img = await loadImage(blob);
+        
+        // Remove background
+        const processedBlob = await removeBackground(img);
+        
+        // Create URL for the processed image
+        const processedUrl = URL.createObjectURL(processedBlob);
+        setProcessedLogoUrl(processedUrl);
+      } catch (error) {
+        console.error('Error processing logo:', error);
+      }
+    };
+
+    processLogo();
+
+    // Cleanup function
+    return () => {
+      if (processedLogoUrl) {
+        URL.revokeObjectURL(processedLogoUrl);
+      }
+    };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,7 +79,7 @@ const Contact = () => {
           >
             <div className="p-8 bg-accent/5 rounded-full">
               <img 
-                src="/lovable-uploads/82b5d2d5-0952-4067-aaac-ab635cd345a7.png" 
+                src={processedLogoUrl || '/lovable-uploads/82b5d2d5-0952-4067-aaac-ab635cd345a7.png'}
                 alt="Logo" 
                 className="w-[400px] h-[400px] transform hover:scale-105 transition-all duration-300"
               />
