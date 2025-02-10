@@ -393,31 +393,55 @@ const Index = () => {
       <section className="py-24 px-4 sm:px-6 lg:px-8 relative bg-white/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-accent-gradient">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-accent-gradient"
+            >
               Our Partners
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-xl text-gray-600 max-w-2xl mx-auto"
+            >
               Trusted by leading organizations worldwide
-            </p>
+            </motion.p>
           </div>
-          <div className="flex flex-nowrap overflow-x-auto justify-center items-center gap-12 pb-4">
-            {partners.map((partner) => (
-              <motion.div
-                key={partner.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="relative group flex-shrink-0"
-              >
-                <div className="h-16 w-auto relative overflow-hidden p-2">
-                  <img
-                    src={partner.logo}
-                    alt={partner.alt}
-                    className={`h-full w-auto object-contain ${partner.className || ''} opacity-70 group-hover:opacity-100 transition-opacity duration-300`}
-                  />
-                </div>
-              </motion.div>
-            ))}
+          <div className="relative">
+            <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-32 bg-gradient-to-r from-transparent via-accent/5 to-transparent blur-2xl"></div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="relative grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-items-center"
+            >
+              {partners.map((partner, index) => (
+                <motion.div
+                  key={partner.name}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ 
+                    duration: 0.5,
+                    delay: index * 0.1,
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                  className="group relative w-full max-w-[160px] aspect-[3/2] p-4"
+                >
+                  <div className="absolute inset-0 bg-white/50 backdrop-blur-xl rounded-xl shadow-lg border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative h-full w-full flex items-center justify-center">
+                    <img
+                      src={partner.logo}
+                      alt={partner.alt}
+                      className={`w-full h-full object-contain ${partner.className || ''} opacity-70 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110`}
+                    />
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
