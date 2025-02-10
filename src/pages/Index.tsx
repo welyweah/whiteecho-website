@@ -22,6 +22,32 @@ import {
 } from "@/components/ui/carousel";
 
 const NetworkWeb = () => {
+  // Create nodes first so we can reference their positions for lines
+  const nodes = Array.from({ length: 20 }).map(() => ({
+    x: Math.random() * 800,
+    y: Math.random() * 600,
+  }));
+
+  // Create lines between nearby nodes
+  const lines = nodes.flatMap((node, i) => 
+    nodes.slice(i + 1).map((targetNode, j) => {
+      const distance = Math.sqrt(
+        Math.pow(node.x - targetNode.x, 2) + 
+        Math.pow(node.y - targetNode.y, 2)
+      );
+      // Only connect nodes that are within 200 pixels of each other
+      if (distance < 200) {
+        return {
+          x1: node.x,
+          y1: node.y,
+          x2: targetNode.x,
+          y2: targetNode.y,
+        };
+      }
+      return null;
+    }).filter(Boolean)
+  );
+
   return (
     <div className="absolute inset-0 overflow-hidden">
       <svg className="w-full h-full opacity-30" viewBox="0 0 800 600">
@@ -31,11 +57,33 @@ const NetworkWeb = () => {
             <stop offset="100%" stopColor="#17d9d0" />
           </linearGradient>
         </defs>
-        {Array.from({ length: 20 }).map((_, i) => (
+        {/* Draw the connecting lines first */}
+        {lines.map((line, i) => (
+          <motion.line
+            key={`line-${i}`}
+            x1={line.x1}
+            y1={line.y1}
+            x2={line.x2}
+            y2={line.y2}
+            stroke="url(#networkGradient)"
+            strokeWidth="0.5"
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: [0, 0.2, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+        {/* Draw the nodes on top of the lines */}
+        {nodes.map((node, i) => (
           <motion.circle
             key={i}
-            cx={Math.random() * 800}
-            cy={Math.random() * 600}
+            cx={node.x}
+            cy={node.y}
             r="2"
             fill="url(#networkGradient)"
             initial={{ opacity: 0.3 }}
@@ -45,26 +93,6 @@ const NetworkWeb = () => {
             }}
             transition={{
               duration: 3,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-        {Array.from({ length: 30 }).map((_, i) => (
-          <motion.line
-            key={`line-${i}`}
-            x1={Math.random() * 800}
-            y1={Math.random() * 600}
-            x2={Math.random() * 800}
-            y2={Math.random() * 600}
-            stroke="url(#networkGradient)"
-            strokeWidth="0.5"
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: [0, 0.2, 0],
-            }}
-            transition={{
-              duration: 4,
               repeat: Infinity,
               delay: Math.random() * 2,
             }}
