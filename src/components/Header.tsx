@@ -44,9 +44,12 @@ const Header = () => {
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuLink className="px-4 py-2 text-sm hover:text-accent transition-colors rounded-lg hover:bg-accent/5">
+                  <Link 
+                    to="/about"
+                    className="px-4 py-2 text-sm hover:text-accent transition-colors rounded-lg hover:bg-accent/5 block"
+                  >
                     About
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link 
