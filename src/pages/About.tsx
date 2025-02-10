@@ -80,13 +80,11 @@ const About = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="flex justify-center mb-16"
         >
-          <div className="p-8 bg-accent/5 rounded-full">
-            <img 
-              src="/lovable-uploads/82b5d2d5-0952-4067-aaac-ab635cd345a7.png" 
-              alt="Company Logo" 
-              className="w-[400px] h-[400px] transform hover:scale-105 transition-all duration-300"
-            />
-          </div>
+          <img 
+            src="/lovable-uploads/82b5d2d5-0952-4067-aaac-ab635cd345a7.png" 
+            alt="Company Logo" 
+            className="w-[400px] h-[400px] transform hover:scale-105 transition-all duration-300"
+          />
         </motion.div>
       </div>
       <Footer />
