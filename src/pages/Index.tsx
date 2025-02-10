@@ -68,12 +68,13 @@ const Index = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
+              className="relative flex items-center justify-center"
             >
-              <div className="aspect-square bg-accent/5 rounded-3xl p-8">
-                <div className="w-full h-full bg-white rounded-2xl shadow-lg"></div>
-              </div>
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent/10 rounded-2xl"></div>
+              <img 
+                src="/lovable-uploads/abb4d321-de2c-40c2-94db-a6203d5e050a.png"
+                alt="Diamond Icon"
+                className="w-full max-w-[400px] h-auto"
+              />
             </motion.div>
           </div>
         </div>
