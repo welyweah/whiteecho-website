@@ -16,8 +16,8 @@ const Contact = () => {
   useEffect(() => {
     const processLogo = async () => {
       try {
-        // Fetch the original image
-        const response = await fetch('/lovable-uploads/ebf6c40d-4412-4216-acd2-b0f2a8f52217.png');
+        // Use an existing image from the project
+        const response = await fetch('/lovable-uploads/9cef9d35-b323-4777-911c-9700c5dc94df.png');
         const blob = await response.blob();
         
         // Load the image
@@ -79,7 +79,7 @@ const Contact = () => {
           >
             <div className="p-8 bg-accent/5 rounded-full">
               <img 
-                src={processedLogoUrl || '/lovable-uploads/ebf6c40d-4412-4216-acd2-b0f2a8f52217.png'}
+                src={processedLogoUrl || '/lovable-uploads/9cef9d35-b323-4777-911c-9700c5dc94df.png'}
                 alt="Logo" 
                 className="w-[400px] h-[400px] transform hover:scale-105 transition-all duration-300"
               />
