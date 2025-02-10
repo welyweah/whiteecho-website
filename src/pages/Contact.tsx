@@ -27,7 +27,7 @@ const Contact = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
           <h1 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#398ae6] to-[#17d9d0]">
             Get in Touch
@@ -37,13 +37,13 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
+        <div className="flex flex-col md:flex-row gap-16 items-center justify-center">
           <motion.form
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             onSubmit={handleSubmit}
-            className="w-full md:w-1/2 max-w-xl space-y-6 bg-white/80 backdrop-blur-xl p-8 rounded-3xl shadow-xl border border-accent/10"
+            className="w-full md:w-1/2 max-w-xl space-y-6 bg-white/60 backdrop-blur-xl p-10 rounded-3xl shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300"
           >
             <div className="space-y-2">
               <label htmlFor="name" className="block text-sm font-medium text-gray-700">
@@ -54,7 +54,7 @@ const Contact = () => {
                 type="text"
                 placeholder="Your name"
                 required
-                className="w-full"
+                className="w-full bg-white/80"
               />
             </div>
             
@@ -67,7 +67,7 @@ const Contact = () => {
                 type="email"
                 placeholder="your@email.com"
                 required
-                className="w-full"
+                className="w-full bg-white/80"
               />
             </div>
             
@@ -79,13 +79,13 @@ const Contact = () => {
                 id="message"
                 placeholder="Your message"
                 required
-                className="w-full min-h-[150px]"
+                className="w-full min-h-[150px] bg-white/80"
               />
             </div>
             
             <Button
               type="submit"
-              className="w-full bg-gradient-to-r from-[#398ae6] to-[#17d9d0] text-white hover:opacity-90"
+              className="w-full bg-gradient-to-r from-[#398ae6] to-[#17d9d0] text-white hover:opacity-90 transition-opacity"
             >
               Send Message
             </Button>
@@ -100,7 +100,7 @@ const Contact = () => {
             <img
               src="/lovable-uploads/533d1c48-7479-4897-aa95-007cd5afad6f.png"
               alt="Contact decoration"
-              className="w-full h-auto"
+              className="w-full h-auto hover:scale-105 transition-transform duration-300"
             />
           </motion.div>
         </div>
