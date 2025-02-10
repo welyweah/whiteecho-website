@@ -77,32 +77,37 @@ const UseCases = () => {
         </div>
         <Carousel
           opts={{
-            align: "start",
+            align: "center",
             loop: true,
           }}
-          className="w-full max-w-7xl mx-auto"
+          className="w-full max-w-5xl mx-auto"
         >
-          <CarouselContent className="-ml-2 md:-ml-4">
+          <CarouselContent className="-ml-2 md:-ml-4 perspective-1000">
             {useCases.map((useCase, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3">
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="h-full p-6 md:p-8 rounded-2xl bg-white/80 backdrop-blur-md border border-accent/10 hover:border-accent/20 shadow-lg hover:shadow-xl transition-all duration-300"
+                  initial={{ opacity: 0, y: 20, rotateY: 45 }}
+                  whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: index * 0.1,
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                  className="h-full p-6 md:p-8 rounded-2xl bg-white/80 backdrop-blur-md border border-accent/10 hover:border-accent/20 shadow-lg hover:shadow-xl transition-all duration-300 transform-gpu hover:-translate-y-1"
                 >
-                  <div className="flex justify-center mb-6">
+                  <div className="flex justify-center items-center h-24 mb-6">
                     {useCase.icon}
                   </div>
-                  <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">{useCase.title}</h3>
+                  <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 text-gray-800">{useCase.title}</h3>
                   <p className="text-sm md:text-base text-gray-600 leading-relaxed">{useCase.description}</p>
                 </motion.div>
               </CarouselItem>
             ))}
           </CarouselContent>
           <div className="hidden sm:block">
-            <CarouselPrevious className="-left-4 md:-left-12 shadow-lg hover:shadow-xl" />
-            <CarouselNext className="-right-4 md:-right-12 shadow-lg hover:shadow-xl" />
+            <CarouselPrevious className="-left-12 md:-left-16 h-12 w-12 rounded-full shadow-lg hover:shadow-xl bg-white/80 backdrop-blur-sm border-accent/20 hover:bg-white/90 transition-all duration-300" />
+            <CarouselNext className="-right-12 md:-right-16 h-12 w-12 rounded-full shadow-lg hover:shadow-xl bg-white/80 backdrop-blur-sm border-accent/20 hover:bg-white/90 transition-all duration-300" />
           </div>
         </Carousel>
       </div>
