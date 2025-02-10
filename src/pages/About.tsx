@@ -51,7 +51,7 @@ const About = () => {
           <h2 className="text-3xl font-semibold text-center mb-8">Headquartered in Zurich, Switzerland</h2>
           <div className="relative h-[400px] w-full rounded-3xl overflow-hidden">
             <img 
-              src="/lovable-uploads/29377331-c092-4300-ae7e-d6d2c092fc23.png" 
+              src="/photo-1506744038136-46273834b3fb" 
               alt="Zurich Headquarters" 
               className="w-full h-full object-cover"
             />
