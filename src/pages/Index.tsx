@@ -175,43 +175,26 @@ const Index = () => {
 
   const partners = [
     {
-      name: "Talent Kick",
-      logo: "/lovable-uploads/6c1da802-50a2-46d8-875f-50f5f4d14977.png",
-      alt: "Talent Kick Logo",
-      className: "brightness-0 invert bg-black"
-    },
-    {
       name: "ETH Student Project House",
-      logo: "/lovable-uploads/fa43d446-9bc6-421b-8ace-c818aa40cbe8.png",
+      logo: "/lovable-uploads/29377331-c092-4300-ae7e-d6d2c092fc23.png",
       alt: "ETH Student Project House Logo",
       className: "brightness-0"
     },
     {
-      name: "Google Cloud",
-      logo: "/lovable-uploads/79424921-819d-4d3e-82b0-9119ff6cd689.png",
-      alt: "Google Cloud Logo"
-    },
-    {
-      name: "ETH AI Center",
-      logo: "/lovable-uploads/e9a82796-9b2a-430c-99a0-9db45fc8b019.png",
-      alt: "ETH AI Center Logo"
-    },
-    {
       name: "AWS",
-      logo: "/lovable-uploads/8a9c0061-b585-4ae6-a45c-a1fa83605031.png",
+      logo: "/lovable-uploads/ba68f5ce-eb05-43e2-b5c7-313462fcbe8c.png",
       alt: "AWS Logo"
     },
     {
-      name: "AWS Startups",
-      logo: "/lovable-uploads/8db8259d-a518-450a-890d-c374dde90b8a.png",
-      alt: "AWS Startups Logo",
-      className: "brightness-0 invert"
+      name: "ETH AI Center",
+      logo: "/lovable-uploads/9cef9d35-b323-4777-911c-9700c5dc94df.png",
+      alt: "ETH AI Center Logo"
     },
     {
       name: "Founderful",
-      logo: "/lovable-uploads/a6273ffe-7d33-4abd-ace0-a9a776ab05c5.png",
+      logo: "/lovable-uploads/146e0147-8655-41b0-8453-f10c7d0753ad.png",
       alt: "Founderful Logo",
-      className: "brightness-0 invert bg-black"
+      className: "brightness-0 invert"
     }
   ];
 
