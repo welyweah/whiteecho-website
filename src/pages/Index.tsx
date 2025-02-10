@@ -198,6 +198,11 @@ const Index = () => {
       name: "Google Cloud",
       logo: "/lovable-uploads/934c9354-bd2a-4854-85b4-4c301f8e0957.png",
       alt: "Google Cloud Logo"
+    },
+    {
+      name: "Talent Kick",
+      logo: "/lovable-uploads/fcec8524-f98a-4d03-86cb-68a3f95f9d28.png",
+      alt: "Talent Kick Logo"
     }
   ];
 
