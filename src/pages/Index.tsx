@@ -175,24 +175,41 @@ const Index = () => {
 
   const partners = [
     {
-      name: "TechCorp",
-      logo: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-      alt: "TechCorp Logo"
+      name: "Talent Kick",
+      logo: "/lovable-uploads/bb15ce34-de82-4d0e-9d86-79251856e6d7.png",
+      alt: "Talent Kick Logo"
     },
     {
-      name: "InnovateHub",
-      logo: "https://images.unsplash.com/photo-1496307653780-42ee777d4833",
-      alt: "InnovateHub Logo"
+      name: "ETH Student Project House",
+      logo: "/lovable-uploads/255c4288-41ec-4cdf-9083-4d81d8cc8b73.png",
+      alt: "ETH Student Project House Logo"
     },
     {
-      name: "GlobalTech",
-      logo: "https://images.unsplash.com/photo-1431576901776-e539bd916ba2",
-      alt: "GlobalTech Logo"
+      name: "Google Cloud",
+      logo: "/lovable-uploads/81831b88-2c1d-4d94-a3c5-93ae50001393.png",
+      alt: "Google Cloud Logo"
     },
     {
-      name: "FutureWorks",
-      logo: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
-      alt: "FutureWorks Logo"
+      name: "ETH AI Center",
+      logo: "/lovable-uploads/b2cb6252-125c-4c61-b342-5541d1ba2184.png",
+      alt: "ETH AI Center Logo"
+    },
+    {
+      name: "AWS",
+      logo: "/lovable-uploads/f2a6f693-8f53-4600-a7cc-dee73e3f0330.png",
+      alt: "AWS Logo"
+    },
+    {
+      name: "AWS Startups",
+      logo: "/lovable-uploads/8db8259d-a518-450a-890d-c374dde90b8a.png",
+      alt: "AWS Startups Logo",
+      className: "brightness-0 invert"
+    },
+    {
+      name: "Founderful",
+      logo: "/lovable-uploads/8e5f9753-ea42-495e-8073-1ff630271e19.png",
+      alt: "Founderful Logo",
+      className: "brightness-0 invert"
     }
   ];
 
@@ -373,7 +390,7 @@ const Index = () => {
               Trusted by leading organizations worldwide
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
             {partners.map((partner) => (
               <motion.div
                 key={partner.name}
@@ -386,7 +403,7 @@ const Index = () => {
                   <img
                     src={partner.logo}
                     alt={partner.alt}
-                    className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-300 filter grayscale group-hover:grayscale-0"
+                    className={`w-full h-full object-contain ${partner.className || ''} opacity-70 group-hover:opacity-100 transition-opacity duration-300`}
                   />
                 </div>
               </motion.div>
