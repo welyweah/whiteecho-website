@@ -177,8 +177,7 @@ const Index = () => {
     {
       name: "ETH Student Project House",
       logo: "/lovable-uploads/29377331-c092-4300-ae7e-d6d2c092fc23.png",
-      alt: "ETH Student Project House Logo",
-      className: "brightness-0"
+      alt: "ETH Student Project House Logo"
     },
     {
       name: "AWS",
@@ -193,8 +192,7 @@ const Index = () => {
     {
       name: "Founderful",
       logo: "/lovable-uploads/146e0147-8655-41b0-8453-f10c7d0753ad.png",
-      alt: "Founderful Logo",
-      className: "brightness-0 invert"
+      alt: "Founderful Logo"
     }
   ];
 
