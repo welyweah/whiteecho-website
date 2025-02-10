@@ -78,37 +78,47 @@ const UseCases = () => {
         
         <Carousel
           opts={{
-            align: "start",
+            align: "center",
             loop: true,
           }}
-          className="w-full max-w-6xl mx-auto"
+          className="w-full max-w-5xl mx-auto perspective-1000"
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {useCases.map((useCase, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+              <CarouselItem 
+                key={index} 
+                className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3 relative"
+              >
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ 
+                  initial={{ opacity: 0, rotateY: 45 }}
+                  animate={{ 
                     opacity: 1, 
-                    y: 0,
+                    rotateY: 0,
                     transition: {
-                      duration: 0.5,
-                      delay: index * 0.1
+                      duration: 0.8,
+                      delay: index * 0.1,
+                      type: "spring",
+                      stiffness: 100
                     }
                   }}
                   whileHover={{ 
-                    y: -5,
+                    scale: 1.05,
+                    rotateY: 10,
                     transition: { 
-                      duration: 0.2
+                      duration: 0.3
                     }
                   }}
-                  className="h-full p-6 rounded-xl bg-white shadow-md hover:shadow-lg 
-                           transition-all duration-300 border border-gray-100"
+                  className="h-full p-6 rounded-xl bg-white/90 backdrop-blur-sm shadow-lg 
+                           border border-white/20 transform-gpu"
+                  style={{
+                    transformStyle: "preserve-3d",
+                    perspective: "1000px"
+                  }}
                 >
                   <motion.div 
-                    className="flex justify-center items-center mb-6"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.2 }}
+                    className="flex justify-center items-center"
+                    whileHover={{ scale: 1.1, rotateZ: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     {useCase.icon}
                   </motion.div>
@@ -123,10 +133,12 @@ const UseCases = () => {
             ))}
           </CarouselContent>
           <div className="hidden sm:block">
-            <CarouselPrevious className="-left-4 lg:-left-8 h-8 w-8 sm:h-10 sm:w-10 rounded-full 
-                                      bg-white shadow-md hover:bg-gray-50" />
-            <CarouselNext className="-right-4 lg:-right-8 h-8 w-8 sm:h-10 sm:w-10 rounded-full 
-                                   bg-white shadow-md hover:bg-gray-50" />
+            <CarouselPrevious className="-left-12 lg:-left-16 h-12 w-12 rounded-full 
+                                      bg-white/80 shadow-lg hover:bg-white
+                                      backdrop-blur-sm border border-white/20" />
+            <CarouselNext className="-right-12 lg:-right-16 h-12 w-12 rounded-full 
+                                   bg-white/80 shadow-lg hover:bg-white
+                                   backdrop-blur-sm border border-white/20" />
           </div>
         </Carousel>
       </div>
