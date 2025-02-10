@@ -48,7 +48,7 @@ const Contact = () => {
               <img 
                 src="/lovable-uploads/82b5d2d5-0952-4067-aaac-ab635cd345a7.png" 
                 alt="Logo" 
-                className="w-24 h-24 animate-pulse"
+                className="w-[400px] h-[400px] transform hover:scale-105 transition-all duration-300"
               />
             </div>
           </motion.div>
