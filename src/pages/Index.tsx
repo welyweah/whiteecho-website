@@ -50,11 +50,11 @@ const NetworkWeb = () => {
 
   return (
     <div className="absolute inset-0 overflow-hidden">
-      <svg className="w-full h-full opacity-40" viewBox="0 0 800 600">
+      <svg className="w-full h-full opacity-50" viewBox="0 0 800 600">
         <defs>
           <linearGradient id="networkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#8B5CF6" /> {/* Vivid purple */}
-            <stop offset="100%" stopColor="#6E59A5" /> {/* Muted purple */}
+            <stop offset="0%" stopColor="#1EAEDB" /> {/* Brighter blue */}
+            <stop offset="100%" stopColor="#33C3F0" /> {/* Sky blue */}
           </linearGradient>
           <filter id="glow">
             <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
@@ -73,10 +73,10 @@ const NetworkWeb = () => {
             x2={line.x2}
             y2={line.y2}
             stroke="url(#networkGradient)"
-            strokeWidth="0.5"
+            strokeWidth="0.8"
             initial={{ opacity: 0 }}
             animate={{
-              opacity: [0, line.opacity * 0.3, 0],
+              opacity: [0, line.opacity * 0.5, 0], // Increased base opacity
             }}
             transition={{
               duration: 3,
