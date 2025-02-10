@@ -36,30 +36,60 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <img 
-              src="/lovable-uploads/c86e61f7-3949-4a8c-b4f9-c8184bfd35c0.png" 
-              alt="Uthereal Logo" 
-              className="h-16 md:h-24 mx-auto mb-8"
-            />
-            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto">
-              Experience the next generation of artificial intelligence, designed to transform your business.
-            </p>
-          </motion.div>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-left"
+            >
+              <img 
+                src="/lovable-uploads/c86e61f7-3949-4a8c-b4f9-c8184bfd35c0.png" 
+                alt="Uthereal Logo" 
+                className="h-16 md:h-20 mb-8"
+              />
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                Transform Your Business with AI
+              </h2>
+              <p className="text-xl text-gray-600 mb-8 max-w-xl">
+                Experience the next generation of artificial intelligence, designed to transform your business and accelerate growth.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button className="px-8 py-3 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors">
+                  Get Started
+                </button>
+                <button className="px-8 py-3 border border-accent text-accent rounded-lg font-medium hover:bg-accent/5 transition-colors">
+                  Watch Demo
+                </button>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="aspect-square bg-accent/5 rounded-3xl p-8">
+                <div className="w-full h-full bg-white rounded-2xl shadow-lg"></div>
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent/10 rounded-2xl"></div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Features Section */}
       <section className="py-20 px-6 bg-white relative">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Powerful Features
-          </h2>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Powerful Features
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Built with cutting-edge technology to help you achieve more
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
               <motion.div
@@ -77,14 +107,18 @@ const Index = () => {
 
       {/* Newsletter Section */}
       <section className="py-20 px-6 relative">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Stay Updated
-          </h2>
-          <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-            Subscribe to our newsletter for the latest updates and insights.
-          </p>
-          <Newsletter />
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-white rounded-2xl p-12 shadow-sm border border-accent/10">
+            <div className="text-center max-w-2xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Stay Updated
+              </h2>
+              <p className="text-xl text-gray-600 mb-12">
+                Subscribe to our newsletter for the latest updates and insights.
+              </p>
+              <Newsletter />
+            </div>
+          </div>
         </div>
       </section>
     </div>
