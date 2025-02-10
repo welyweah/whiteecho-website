@@ -206,7 +206,7 @@ const Index = () => {
                 <button className="px-8 py-4 bg-gradient-to-r from-[#398ae6] to-[#17d9d0] text-white rounded-full font-medium hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent/25">
                   Get Started
                 </button>
-                <button className="px-8 py-4 bg-white text-white border border-[#F1F1F1] rounded-full font-medium hover:bg-gray-50 transition-all duration-300">
+                <button className="px-8 py-4 bg-white text-white border border-[#17d9d0]/20 rounded-full font-medium hover:bg-gray-50 transition-all duration-300">
                   <span className="bg-gradient-to-r from-[#398ae6] to-[#17d9d0] bg-clip-text text-transparent">
                     Watch Demo
                   </span>
