@@ -173,6 +173,29 @@ const Index = () => {
     }
   ];
 
+  const partners = [
+    {
+      name: "TechCorp",
+      logo: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+      alt: "TechCorp Logo"
+    },
+    {
+      name: "InnovateHub",
+      logo: "https://images.unsplash.com/photo-1496307653780-42ee777d4833",
+      alt: "InnovateHub Logo"
+    },
+    {
+      name: "GlobalTech",
+      logo: "https://images.unsplash.com/photo-1431576901776-e539bd916ba2",
+      alt: "GlobalTech Logo"
+    },
+    {
+      name: "FutureWorks",
+      logo: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
+      alt: "FutureWorks Logo"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-soft relative overflow-hidden">
       <FloatingShapes />
@@ -334,6 +357,38 @@ const Index = () => {
                 transition={{ delay: index * 0.2 }}
               >
                 <FeatureCard {...feature} />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-4 sm:px-6 lg:px-8 relative bg-white/50 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-accent-gradient">
+              Our Partners
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Trusted by leading organizations worldwide
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+            {partners.map((partner) => (
+              <motion.div
+                key={partner.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="relative group"
+              >
+                <div className="aspect-[3/2] relative overflow-hidden rounded-xl bg-white/80 backdrop-blur-sm p-6 border border-accent/10 hover:border-accent/20 transition-all duration-300 shadow-lg hover:shadow-xl">
+                  <img
+                    src={partner.logo}
+                    alt={partner.alt}
+                    className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-300 filter grayscale group-hover:grayscale-0"
+                  />
+                </div>
               </motion.div>
             ))}
           </div>
