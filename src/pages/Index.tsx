@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import FloatingShapes from '../components/FloatingShapes';
 import FeatureCard from '../components/FeatureCard';
 import Newsletter from '../components/Newsletter';
-import { Sparkles, Zap, Shield, Globe, Menu } from 'lucide-react';
+import { Sparkles, Zap, Shield, Globe, Menu, Building2, Users2, LineChart, ShoppingCart, Briefcase } from 'lucide-react';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,6 +12,13 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Index = () => {
   const features = [
@@ -34,6 +41,34 @@ const Index = () => {
       icon: <Globe className="w-8 h-8" />,
       title: "Global Scale",
       description: "Scale your operations globally with our distributed network."
+    }
+  ];
+
+  const useCases = [
+    {
+      icon: <Building2 className="w-12 h-12 text-accent mb-4" />,
+      title: "Enterprise Solutions",
+      description: "Large organizations leveraging our AI platform for data-driven decision making and process automation."
+    },
+    {
+      icon: <Users2 className="w-12 h-12 text-accent mb-4" />,
+      title: "Team Collaboration",
+      description: "Cross-functional teams using our tools to enhance productivity and streamline workflows."
+    },
+    {
+      icon: <LineChart className="w-12 h-12 text-accent mb-4" />,
+      title: "Data Analytics",
+      description: "Businesses gaining valuable insights through our advanced analytics and visualization tools."
+    },
+    {
+      icon: <ShoppingCart className="w-12 h-12 text-accent mb-4" />,
+      title: "E-commerce",
+      description: "Online retailers optimizing customer experience and inventory management with AI."
+    },
+    {
+      icon: <Briefcase className="w-12 h-12 text-accent mb-4" />,
+      title: "Professional Services",
+      description: "Consultants and service providers enhancing client delivery with our platform."
     }
   ];
 
@@ -134,6 +169,50 @@ const Index = () => {
               />
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Customer Use Cases Section */}
+      <section className="py-20 px-6 relative bg-white/50 backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Customer Use Cases
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Discover how organizations are transforming their operations with our AI solutions
+            </p>
+          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full max-w-4xl mx-auto"
+          >
+            <CarouselContent>
+              {useCases.map((useCase, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-6">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className="h-full glass-card rounded-xl p-6 text-center hover:shadow-lg transition-shadow"
+                    >
+                      <div className="flex justify-center">
+                        {useCase.icon}
+                      </div>
+                      <h3 className="text-xl font-semibold mb-3">{useCase.title}</h3>
+                      <p className="text-gray-600">{useCase.description}</p>
+                    </motion.div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
         </div>
       </section>
 
