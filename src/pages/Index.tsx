@@ -203,6 +203,11 @@ const Index = () => {
       name: "Talent Kick",
       logo: "/lovable-uploads/fcec8524-f98a-4d03-86cb-68a3f95f9d28.png",
       alt: "Talent Kick Logo"
+    },
+    {
+      name: "Azure",
+      logo: "/lovable-uploads/683b4e08-4608-4fb5-b73d-9380771ef1e3.png",
+      alt: "Azure Logo"
     }
   ];
 
