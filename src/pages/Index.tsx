@@ -42,9 +42,11 @@ const Index = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
-              The Future of AI
-            </h1>
+            <img 
+              src="/lovable-uploads/c86e61f7-3949-4a8c-b4f9-c8184bfd35c0.png" 
+              alt="Uthereal Logo" 
+              className="h-16 md:h-24 mx-auto mb-8"
+            />
             <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto">
               Experience the next generation of artificial intelligence, designed to transform your business.
             </p>
