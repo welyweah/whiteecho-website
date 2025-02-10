@@ -95,12 +95,12 @@ const Contact = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="w-full md:w-2/5 max-w-lg"
+            className="w-full md:w-2/5 max-w-xl"
           >
             <img
               src="/lovable-uploads/533d1c48-7479-4897-aa95-007cd5afad6f.png"
               alt="Contact decoration"
-              className="w-full h-auto hover:scale-105 transition-transform duration-300"
+              className="w-full h-auto scale-125 hover:scale-[1.35] transition-transform duration-300"
             />
           </motion.div>
         </div>
