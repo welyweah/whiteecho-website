@@ -4,7 +4,15 @@ import { motion } from 'framer-motion';
 import FloatingShapes from '../components/FloatingShapes';
 import FeatureCard from '../components/FeatureCard';
 import Newsletter from '../components/Newsletter';
-import { Sparkles, Zap, Shield, Globe } from 'lucide-react';
+import { Sparkles, Zap, Shield, Globe, Menu } from 'lucide-react';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Index = () => {
   const features = [
@@ -33,6 +41,61 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-soft relative overflow-hidden">
       <FloatingShapes />
+      
+      {/* Top Menu */}
+      <div className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-200/50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-center justify-between h-16">
+            <img 
+              src="/lovable-uploads/c86e61f7-3949-4a8c-b4f9-c8184bfd35c0.png" 
+              alt="Logo" 
+              className="h-8"
+            />
+            
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center space-x-8">
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="grid gap-3 p-6 md:w-[400px] lg:w-[500px]">
+                        <div className="grid gap-1">
+                          <h4 className="text-sm font-medium leading-none">AI Solutions</h4>
+                          <p className="text-sm text-gray-500">Explore our AI-powered tools and services</p>
+                        </div>
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuLink className="px-3 py-2 text-sm hover:text-accent transition-colors">
+                      Pricing
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuLink className="px-3 py-2 text-sm hover:text-accent transition-colors">
+                      About
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuLink className="px-3 py-2 text-sm hover:text-accent transition-colors">
+                      Contact
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+              <button className="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors">
+                Get Started
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button className="md:hidden p-2 hover:bg-gray-100 rounded-lg">
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+      </div>
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6">
