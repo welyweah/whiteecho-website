@@ -55,7 +55,7 @@ const useCases = [
 
 const UseCases = () => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-b from-white/50 to-primary-soft/50 backdrop-blur-sm">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-b from-white/50 to-primary-soft/50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 space-y-4">
           <motion.h2 
@@ -75,59 +75,47 @@ const UseCases = () => {
             Discover how organizations are transforming their operations with our AI solutions
           </motion.p>
         </div>
+        
         <Carousel
           opts={{
-            align: "center",
+            align: "start",
             loop: true,
           }}
           className="w-full max-w-6xl mx-auto"
         >
-          <CarouselContent className="-ml-2 md:-ml-4 [perspective:2000px]">
+          <CarouselContent className="-ml-2 md:-ml-4">
             {useCases.map((useCase, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3 relative">
+              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                 <motion.div
-                  initial={{ opacity: 0, rotateY: 45, scale: 0.9 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ 
                     opacity: 1, 
-                    rotateY: 0, 
-                    scale: 1,
+                    y: 0,
                     transition: {
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 20,
+                      duration: 0.5,
                       delay: index * 0.1
                     }
                   }}
                   whileHover={{ 
-                    scale: 1.05,
-                    rotateY: -5,
+                    y: -5,
                     transition: { 
-                      type: "spring", 
-                      stiffness: 400, 
-                      damping: 30 
+                      duration: 0.2
                     }
                   }}
-                  className="h-full p-6 md:p-8 rounded-2xl bg-white/90 backdrop-blur-md border border-accent/10 
-                           hover:border-accent/30 shadow-lg hover:shadow-xl transition-all duration-300 
-                           transform-gpu group relative overflow-hidden"
+                  className="h-full p-6 rounded-xl bg-white shadow-md hover:shadow-lg 
+                           transition-all duration-300 border border-gray-100"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 
-                               group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="flex justify-center items-center h-24 mb-6 relative">
-                    <motion.div
-                      whileHover={{ 
-                        rotate: [0, -5, 5, -5, 0],
-                        transition: { duration: 0.5 }
-                      }}
-                    >
-                      {useCase.icon}
-                    </motion.div>
-                  </div>
-                  <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 text-gray-800 
-                               relative z-10 group-hover:text-accent transition-colors duration-300">
+                  <motion.div 
+                    className="flex justify-center items-center mb-6"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {useCase.icon}
+                  </motion.div>
+                  <h3 className="text-lg font-semibold mb-3 text-gray-800">
                     {useCase.title}
                   </h3>
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed relative z-10">
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     {useCase.description}
                   </p>
                 </motion.div>
@@ -135,12 +123,10 @@ const UseCases = () => {
             ))}
           </CarouselContent>
           <div className="hidden sm:block">
-            <CarouselPrevious className="-left-12 md:-left-16 h-12 w-12 rounded-full shadow-lg hover:shadow-xl 
-                                      bg-white/90 backdrop-blur-sm border-accent/20 hover:bg-white hover:border-accent/50 
-                                      transition-all duration-300" />
-            <CarouselNext className="-right-12 md:-right-16 h-12 w-12 rounded-full shadow-lg hover:shadow-xl 
-                                   bg-white/90 backdrop-blur-sm border-accent/20 hover:bg-white hover:border-accent/50 
-                                   transition-all duration-300" />
+            <CarouselPrevious className="-left-4 lg:-left-8 h-8 w-8 sm:h-10 sm:w-10 rounded-full 
+                                      bg-white shadow-md hover:bg-gray-50" />
+            <CarouselNext className="-right-4 lg:-right-8 h-8 w-8 sm:h-10 sm:w-10 rounded-full 
+                                   bg-white shadow-md hover:bg-gray-50" />
           </div>
         </Carousel>
       </div>
