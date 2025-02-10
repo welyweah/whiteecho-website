@@ -176,40 +176,36 @@ const Index = () => {
   const partners = [
     {
       name: "Talent Kick",
-      logo: "/lovable-uploads/bb15ce34-de82-4d0e-9d86-79251856e6d7.png",
-      alt: "Talent Kick Logo"
+      logo: "/lovable-uploads/6c1da802-50a2-46d8-875f-50f5f4d14977.png",
+      alt: "Talent Kick Logo",
+      className: "brightness-0 invert bg-black"
     },
     {
       name: "ETH Student Project House",
-      logo: "/lovable-uploads/255c4288-41ec-4cdf-9083-4d81d8cc8b73.png",
-      alt: "ETH Student Project House Logo"
+      logo: "/lovable-uploads/fa43d446-9bc6-421b-8ace-c818aa40cbe8.png",
+      alt: "ETH Student Project House Logo",
+      className: "brightness-0"
     },
     {
       name: "Google Cloud",
-      logo: "/lovable-uploads/81831b88-2c1d-4d94-a3c5-93ae50001393.png",
+      logo: "/lovable-uploads/79424921-819d-4d3e-82b0-9119ff6cd689.png",
       alt: "Google Cloud Logo"
     },
     {
       name: "ETH AI Center",
-      logo: "/lovable-uploads/b2cb6252-125c-4c61-b342-5541d1ba2184.png",
+      logo: "/lovable-uploads/e9a82796-9b2a-430c-99a0-9db45fc8b019.png",
       alt: "ETH AI Center Logo"
     },
     {
       name: "AWS",
-      logo: "/lovable-uploads/f2a6f693-8f53-4600-a7cc-dee73e3f0330.png",
+      logo: "/lovable-uploads/8a9c0061-b585-4ae6-a45c-a1fa83605031.png",
       alt: "AWS Logo"
     },
     {
-      name: "AWS Startups",
-      logo: "/lovable-uploads/8db8259d-a518-450a-890d-c374dde90b8a.png",
-      alt: "AWS Startups Logo",
-      className: "brightness-0 invert"
-    },
-    {
       name: "Founderful",
-      logo: "/lovable-uploads/8e5f9753-ea42-495e-8073-1ff630271e19.png",
+      logo: "/lovable-uploads/a6273ffe-7d33-4abd-ace0-a9a776ab05c5.png",
       alt: "Founderful Logo",
-      className: "brightness-0 invert"
+      className: "brightness-0 invert bg-black"
     }
   ];
 
