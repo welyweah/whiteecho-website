@@ -31,9 +31,9 @@ export default {
           muted: "#f1f1f1",
         },
         accent: {
-          DEFAULT: "#398ae6",
-          soft: "#17d9d0",
-          gradient: "linear-gradient(to right, #398ae6, #17d9d0)",
+          DEFAULT: "#377fe0",
+          soft: "#05edc1",
+          gradient: "linear-gradient(to right, #377fe0, #05edc1)",
         },
       },
       keyframes: {
@@ -62,9 +62,10 @@ export default {
         "fade-in-up": "fade-in-up 0.5s ease-out forwards",
       },
       backgroundImage: {
-        'accent-gradient': 'linear-gradient(to right, #398ae6, #17d9d0)',
+        'accent-gradient': 'linear-gradient(to right, #377fe0, #05edc1)',
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
