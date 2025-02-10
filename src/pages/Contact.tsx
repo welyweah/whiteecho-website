@@ -18,7 +18,7 @@ const Contact = () => {
     const processLogo = async () => {
       try {
         setIsProcessing(true);
-        const imagePath = '/lovable-uploads/9cef9d35-b323-4777-911c-9700c5dc94df.png';
+        const imagePath = '/lovable-uploads/1a39f20b-155d-4999-9dda-834033b14c5e.png';
         
         // First verify the image exists
         const response = await fetch(imagePath);
@@ -34,7 +34,7 @@ const Contact = () => {
       } catch (error) {
         console.error('Error processing logo:', error);
         // If there's an error, we'll use the original image
-        setProcessedLogoUrl('/lovable-uploads/9cef9d35-b323-4777-911c-9700c5dc94df.png');
+        setProcessedLogoUrl('/lovable-uploads/1a39f20b-155d-4999-9dda-834033b14c5e.png');
         toast({
           title: "Notice",
           description: "Using original image as fallback",
@@ -88,7 +88,7 @@ const Contact = () => {
           >
             <div className="p-8 bg-accent/5 rounded-full">
               <img 
-                src={processedLogoUrl || '/lovable-uploads/9cef9d35-b323-4777-911c-9700c5dc94df.png'}
+                src={processedLogoUrl || '/lovable-uploads/1a39f20b-155d-4999-9dda-834033b14c5e.png'}
                 alt="Logo" 
                 className={`w-[400px] h-[400px] transform hover:scale-105 transition-all duration-300 ${isProcessing ? 'opacity-50' : 'opacity-100'}`}
               />
