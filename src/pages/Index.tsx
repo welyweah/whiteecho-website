@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import FloatingShapes from '../components/FloatingShapes';
@@ -22,26 +21,27 @@ import {
 } from "@/components/ui/carousel";
 
 const NetworkWeb = () => {
-  // Create nodes first so we can reference their positions for lines
-  const nodes = Array.from({ length: 20 }).map(() => ({
+  // Create more nodes for a denser network
+  const nodes = Array.from({ length: 30 }).map(() => ({
     x: Math.random() * 800,
     y: Math.random() * 600,
   }));
 
-  // Create lines between nearby nodes
+  // Create lines between nearby nodes with increased connection distance
   const lines = nodes.flatMap((node, i) => 
     nodes.slice(i + 1).map((targetNode, j) => {
       const distance = Math.sqrt(
         Math.pow(node.x - targetNode.x, 2) + 
         Math.pow(node.y - targetNode.y, 2)
       );
-      // Only connect nodes that are within 200 pixels of each other
-      if (distance < 200) {
+      // Increased connection distance for more connections
+      if (distance < 250) {
         return {
           x1: node.x,
           y1: node.y,
           x2: targetNode.x,
           y2: targetNode.y,
+          opacity: 1 - (distance / 250), // Fade out distant connections
         };
       }
       return null;
@@ -50,12 +50,19 @@ const NetworkWeb = () => {
 
   return (
     <div className="absolute inset-0 overflow-hidden">
-      <svg className="w-full h-full opacity-30" viewBox="0 0 800 600">
+      <svg className="w-full h-full opacity-40" viewBox="0 0 800 600">
         <defs>
           <linearGradient id="networkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#398ae6" />
-            <stop offset="100%" stopColor="#17d9d0" />
+            <stop offset="0%" stopColor="#8B5CF6" /> {/* Vivid purple */}
+            <stop offset="100%" stopColor="#6E59A5" /> {/* Muted purple */}
           </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
         </defs>
         {/* Draw the connecting lines first */}
         {lines.map((line, i) => (
@@ -69,10 +76,10 @@ const NetworkWeb = () => {
             strokeWidth="0.5"
             initial={{ opacity: 0 }}
             animate={{
-              opacity: [0, 0.2, 0],
+              opacity: [0, line.opacity * 0.3, 0],
             }}
             transition={{
-              duration: 4,
+              duration: 3,
               repeat: Infinity,
               delay: Math.random() * 2,
             }}
@@ -84,15 +91,16 @@ const NetworkWeb = () => {
             key={i}
             cx={node.x}
             cy={node.y}
-            r="2"
+            r="1.5"
             fill="url(#networkGradient)"
+            filter="url(#glow)"
             initial={{ opacity: 0.3 }}
             animate={{
               opacity: [0.3, 0.8, 0.3],
               scale: [1, 1.5, 1],
             }}
             transition={{
-              duration: 3,
+              duration: 2,
               repeat: Infinity,
               delay: Math.random() * 2,
             }}
