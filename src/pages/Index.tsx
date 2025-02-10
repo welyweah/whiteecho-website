@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import FloatingShapes from '../components/FloatingShapes';
@@ -107,11 +106,6 @@ const Index = () => {
               transition={{ duration: 0.8 }}
               className="text-left"
             >
-              <img 
-                src="/lovable-uploads/c86e61f7-3949-4a8c-b4f9-c8184bfd35c0.png" 
-                alt="Uthereal Logo" 
-                className="h-16 md:h-20 mb-8"
-              />
               <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
                 Transform Your Business with AI
               </h2>
