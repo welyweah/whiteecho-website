@@ -441,7 +441,7 @@ const Index = () => {
                   }}
                   className="group relative w-full max-w-[160px] aspect-[3/2] p-4"
                 >
-                  <div className="absolute inset-0 bg-white/10 backdrop-blur-xl rounded-xl shadow-lg border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-black/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative h-full w-full flex items-center justify-center">
                     <img
                       src={partner.logo}
