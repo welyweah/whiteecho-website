@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import FloatingShapes from '../components/FloatingShapes';
 import FeatureCard from '../components/FeatureCard';
 import Newsletter from '../components/Newsletter';
-import { Sparkles, Zap, Shield, Globe, Menu, Building2, Users2, LineChart, ShoppingCart, Briefcase } from 'lucide-react';
+import { Sparkles, Zap, Shield, Globe, Menu, Building2, Users2, LineChart, ShoppingCart, Briefcase, Trophy, Cpu, Workflow } from 'lucide-react';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -21,27 +21,24 @@ import {
 } from "@/components/ui/carousel";
 
 const NetworkWeb = () => {
-  // Create more nodes for a denser network
   const nodes = Array.from({ length: 30 }).map(() => ({
     x: Math.random() * 800,
     y: Math.random() * 600,
   }));
 
-  // Create lines between nearby nodes with increased connection distance
   const lines = nodes.flatMap((node, i) => 
     nodes.slice(i + 1).map((targetNode, j) => {
       const distance = Math.sqrt(
         Math.pow(node.x - targetNode.x, 2) + 
         Math.pow(node.y - targetNode.y, 2)
       );
-      // Increased connection distance for more connections
       if (distance < 250) {
         return {
           x1: node.x,
           y1: node.y,
           x2: targetNode.x,
           y2: targetNode.y,
-          opacity: 1 - (distance / 250), // Fade out distant connections
+          opacity: 1 - (distance / 250),
         };
       }
       return null;
@@ -53,8 +50,8 @@ const NetworkWeb = () => {
       <svg className="w-full h-full opacity-50" viewBox="0 0 800 600">
         <defs>
           <linearGradient id="networkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#1EAEDB" /> {/* Brighter blue */}
-            <stop offset="100%" stopColor="#33C3F0" /> {/* Sky blue */}
+            <stop offset="0%" stopColor="#1EAEDB" />
+            <stop offset="100%" stopColor="#33C3F0" />
           </linearGradient>
           <filter id="glow">
             <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
@@ -64,7 +61,6 @@ const NetworkWeb = () => {
             </feMerge>
           </filter>
         </defs>
-        {/* Draw the connecting lines first */}
         {lines.map((line, i) => (
           <motion.line
             key={`line-${i}`}
@@ -76,7 +72,7 @@ const NetworkWeb = () => {
             strokeWidth="0.8"
             initial={{ opacity: 0 }}
             animate={{
-              opacity: [0, line.opacity * 0.5, 0], // Increased base opacity
+              opacity: [0, line.opacity * 0.5, 0],
             }}
             transition={{
               duration: 3,
@@ -85,7 +81,6 @@ const NetworkWeb = () => {
             }}
           />
         ))}
-        {/* Draw the nodes on top of the lines */}
         {nodes.map((node, i) => (
           <motion.circle
             key={i}
@@ -160,6 +155,21 @@ const Index = () => {
       icon: <Briefcase className="w-12 h-12 text-accent mb-4" />,
       title: "Professional Services",
       description: "Consultants and service providers enhancing client delivery with our platform."
+    },
+    {
+      icon: <Trophy className="w-12 h-12 text-accent mb-4" />,
+      title: "Sports Analytics",
+      description: "Sports teams and organizations using AI for performance analysis and strategic planning."
+    },
+    {
+      icon: <Cpu className="w-12 h-12 text-accent mb-4" />,
+      title: "Manufacturing",
+      description: "Smart manufacturing processes enhanced by AI-driven quality control and optimization."
+    },
+    {
+      icon: <Workflow className="w-12 h-12 text-accent mb-4" />,
+      title: "Workflow Automation",
+      description: "Organizations streamlining operations through intelligent process automation."
     }
   ];
 
@@ -167,7 +177,6 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-soft relative overflow-hidden">
       <FloatingShapes />
       
-      {/* Top Menu */}
       <div className="fixed top-0 left-0 right-0 bg-white/70 backdrop-blur-xl z-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
@@ -177,7 +186,6 @@ const Index = () => {
               className="h-10 hover:opacity-90 transition-opacity"
             />
             
-            {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
               <NavigationMenu>
                 <NavigationMenuList className="space-x-2">
@@ -214,7 +222,6 @@ const Index = () => {
               </button>
             </div>
 
-            {/* Mobile Menu Button */}
             <button className="md:hidden p-2 hover:bg-accent/5 rounded-lg transition-colors">
               <Menu className="w-6 h-6" />
             </button>
@@ -222,7 +229,6 @@ const Index = () => {
         </div>
       </div>
       
-      {/* Hero Section */}
       <section className="relative pt-40 lg:pt-48 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -266,7 +272,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Customer Use Cases Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-b from-white/50 to-primary-soft/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
@@ -282,33 +287,34 @@ const Index = () => {
               align: "start",
               loop: true,
             }}
-            className="w-full max-w-5xl mx-auto"
+            className="w-full max-w-7xl mx-auto"
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-2 md:-ml-4">
               {useCases.map((useCase, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 pl-4">
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="h-full p-8 rounded-2xl bg-white/80 backdrop-blur-md border border-accent/10 hover:border-accent/20 shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="h-full p-6 md:p-8 rounded-2xl bg-white/80 backdrop-blur-md border border-accent/10 hover:border-accent/20 shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     <div className="flex justify-center mb-6">
                       {useCase.icon}
                     </div>
-                    <h3 className="text-xl font-semibold mb-4">{useCase.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{useCase.description}</p>
+                    <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">{useCase.title}</h3>
+                    <p className="text-sm md:text-base text-gray-600 leading-relaxed">{useCase.description}</p>
                   </motion.div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-12 shadow-lg hover:shadow-xl" />
-            <CarouselNext className="hidden md:flex -right-12 shadow-lg hover:shadow-xl" />
+            <div className="hidden sm:block">
+              <CarouselPrevious className="-left-4 md:-left-12 shadow-lg hover:shadow-xl" />
+              <CarouselNext className="-right-4 md:-right-12 shadow-lg hover:shadow-xl" />
+            </div>
           </Carousel>
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
@@ -334,7 +340,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Newsletter Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-7xl mx-auto">
           <div className="relative">
