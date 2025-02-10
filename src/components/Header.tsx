@@ -1,8 +1,7 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Menu } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { loadImage, removeBackground } from '../utils/backgroundRemoval';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,39 +12,13 @@ import {
 } from "@/components/ui/navigation-menu";
 
 const Header = () => {
-  const [processedLogoUrl, setProcessedLogoUrl] = useState<string>("/lovable-uploads/c86e61f7-3949-4a8c-b4f9-c8184bfd35c0.png");
-
-  useEffect(() => {
-    const processLogo = async () => {
-      try {
-        // Fetch the original image
-        const response = await fetch("/lovable-uploads/c86e61f7-3949-4a8c-b4f9-c8184bfd35c0.png");
-        const imageBlob = await response.blob();
-        
-        // Load the image
-        const img = await loadImage(imageBlob);
-        
-        // Remove background
-        const processedBlob = await removeBackground(img);
-        
-        // Create URL for processed image
-        const processedUrl = URL.createObjectURL(processedBlob);
-        setProcessedLogoUrl(processedUrl);
-      } catch (error) {
-        console.error('Error processing logo:', error);
-      }
-    };
-
-    processLogo();
-  }, []);
-
   return (
     <div className="fixed top-0 left-0 right-0 bg-white/70 backdrop-blur-xl z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/">
             <img 
-              src={processedLogoUrl}
+              src="/lovable-uploads/c86e61f7-3949-4a8c-b4f9-c8184bfd35c0.png" 
               alt="Logo" 
               className="h-10 hover:opacity-90 transition-opacity"
             />
