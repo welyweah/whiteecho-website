@@ -17,7 +17,7 @@ const Contact = () => {
     const processLogo = async () => {
       try {
         // Fetch the original image
-        const response = await fetch('/lovable-uploads/82b5d2d5-0952-4067-aaac-ab635cd345a7.png');
+        const response = await fetch('/lovable-uploads/ebf6c40d-4412-4216-acd2-b0f2a8f52217.png');
         const blob = await response.blob();
         
         // Load the image
@@ -79,7 +79,7 @@ const Contact = () => {
           >
             <div className="p-8 bg-accent/5 rounded-full">
               <img 
-                src={processedLogoUrl || '/lovable-uploads/82b5d2d5-0952-4067-aaac-ab635cd345a7.png'}
+                src={processedLogoUrl || '/lovable-uploads/ebf6c40d-4412-4216-acd2-b0f2a8f52217.png'}
                 alt="Logo" 
                 className="w-[400px] h-[400px] transform hover:scale-105 transition-all duration-300"
               />
