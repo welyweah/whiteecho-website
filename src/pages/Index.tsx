@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import FloatingShapes from '../components/FloatingShapes';
@@ -20,6 +19,60 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+
+const NetworkWeb = () => {
+  return (
+    <div className="absolute inset-0 overflow-hidden">
+      <svg className="w-full h-full opacity-30" viewBox="0 0 800 600">
+        <defs>
+          <linearGradient id="networkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#398ae6" />
+            <stop offset="100%" stopColor="#17d9d0" />
+          </linearGradient>
+        </defs>
+        {Array.from({ length: 20 }).map((_, i) => (
+          <motion.circle
+            key={i}
+            cx={Math.random() * 800}
+            cy={Math.random() * 600}
+            r="2"
+            fill="url(#networkGradient)"
+            initial={{ opacity: 0.3 }}
+            animate={{
+              opacity: [0.3, 0.8, 0.3],
+              scale: [1, 1.5, 1],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+        {Array.from({ length: 30 }).map((_, i) => (
+          <motion.line
+            key={`line-${i}`}
+            x1={Math.random() * 800}
+            y1={Math.random() * 600}
+            x2={Math.random() * 800}
+            y2={Math.random() * 600}
+            stroke="url(#networkGradient)"
+            strokeWidth="0.5"
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: [0, 0.2, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </svg>
+    </div>
+  );
+};
 
 const Index = () => {
   const features = [
@@ -132,7 +185,7 @@ const Index = () => {
         </div>
       </div>
       
-      {/* Hero Section - Updated with better spacing and animations */}
+      {/* Hero Section - Updated with bigger diamond and network web */}
       <section className="relative pt-40 lg:pt-48 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -163,11 +216,11 @@ const Index = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative flex items-center justify-center"
             >
-              <div className="absolute inset-0 bg-accent/5 rounded-full filter blur-3xl animate-pulse"></div>
+              <NetworkWeb />
               <img 
                 src="/lovable-uploads/abb4d321-de2c-40c2-94db-a6203d5e050a.png"
                 alt="Diamond Icon"
-                className="w-full max-w-[500px] h-auto relative z-10 transform hover:scale-105 transition-all duration-300"
+                className="w-full max-w-[600px] h-auto relative z-10 transform hover:scale-105 transition-all duration-300"
               />
             </motion.div>
           </div>
