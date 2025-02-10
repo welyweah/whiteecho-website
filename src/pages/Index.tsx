@@ -193,6 +193,11 @@ const Index = () => {
       name: "Founderful",
       logo: "/lovable-uploads/146e0147-8655-41b0-8453-f10c7d0753ad.png",
       alt: "Founderful Logo"
+    },
+    {
+      name: "Google Cloud",
+      logo: "/lovable-uploads/934c9354-bd2a-4854-85b4-4c301f8e0957.png",
+      alt: "Google Cloud Logo"
     }
   ];
 
