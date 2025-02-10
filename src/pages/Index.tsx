@@ -125,12 +125,12 @@ const Index = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative flex items-center justify-center"
+              className="relative flex items-center justify-center animate-float"
             >
               <img 
                 src="/lovable-uploads/abb4d321-de2c-40c2-94db-a6203d5e050a.png"
                 alt="Diamond Icon"
-                className="w-full max-w-[400px] h-auto"
+                className="w-full max-w-[500px] h-auto transform hover:scale-105 transition-transform duration-300"
               />
             </motion.div>
           </div>
