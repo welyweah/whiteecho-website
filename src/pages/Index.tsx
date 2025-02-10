@@ -177,37 +177,44 @@ const Index = () => {
     {
       name: "ETH Student Project House",
       logo: "/lovable-uploads/29377331-c092-4300-ae7e-d6d2c092fc23.png",
-      alt: "ETH Student Project House Logo"
+      alt: "ETH Student Project House Logo",
+      className: ""
     },
     {
       name: "AWS",
       logo: "/lovable-uploads/ba68f5ce-eb05-43e2-b5c7-313462fcbe8c.png",
-      alt: "AWS Logo"
+      alt: "AWS Logo",
+      className: ""
     },
     {
       name: "ETH AI Center",
       logo: "/lovable-uploads/9cef9d35-b323-4777-911c-9700c5dc94df.png",
-      alt: "ETH AI Center Logo"
+      alt: "ETH AI Center Logo",
+      className: ""
     },
     {
       name: "Founderful",
       logo: "/lovable-uploads/146e0147-8655-41b0-8453-f10c7d0753ad.png",
-      alt: "Founderful Logo"
+      alt: "Founderful Logo",
+      className: ""
     },
     {
       name: "Google Cloud",
       logo: "/lovable-uploads/934c9354-bd2a-4854-85b4-4c301f8e0957.png",
-      alt: "Google Cloud Logo"
+      alt: "Google Cloud Logo",
+      className: ""
     },
     {
       name: "Talent Kick",
       logo: "/lovable-uploads/fcec8524-f98a-4d03-86cb-68a3f95f9d28.png",
-      alt: "Talent Kick Logo"
+      alt: "Talent Kick Logo",
+      className: ""
     },
     {
       name: "Azure",
       logo: "/lovable-uploads/683b4e08-4608-4fb5-b73d-9380771ef1e3.png",
-      alt: "Azure Logo"
+      alt: "Azure Logo",
+      className: ""
     }
   ];
 
@@ -484,7 +491,7 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="relative bg-[#1A1F2C] py-8">
+      <footer className="relative bg-[#0EA5E9] py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <motion.div
