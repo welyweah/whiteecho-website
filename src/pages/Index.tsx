@@ -202,6 +202,12 @@ const Index = () => {
       alt: "AWS Logo"
     },
     {
+      name: "AWS Startups",
+      logo: "/lovable-uploads/8db8259d-a518-450a-890d-c374dde90b8a.png",
+      alt: "AWS Startups Logo",
+      className: "brightness-0 invert"
+    },
+    {
       name: "Founderful",
       logo: "/lovable-uploads/a6273ffe-7d33-4abd-ace0-a9a776ab05c5.png",
       alt: "Founderful Logo",
