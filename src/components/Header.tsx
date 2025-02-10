@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Menu } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -15,11 +16,13 @@ const Header = () => {
     <div className="fixed top-0 left-0 right-0 bg-white/70 backdrop-blur-xl z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <img 
-            src="/lovable-uploads/c86e61f7-3949-4a8c-b4f9-c8184bfd35c0.png" 
-            alt="Logo" 
-            className="h-10 hover:opacity-90 transition-opacity"
-          />
+          <Link to="/">
+            <img 
+              src="/lovable-uploads/c86e61f7-3949-4a8c-b4f9-c8184bfd35c0.png" 
+              alt="Logo" 
+              className="h-10 hover:opacity-90 transition-opacity"
+            />
+          </Link>
           
           <div className="hidden md:flex items-center space-x-8">
             <NavigationMenu>
@@ -46,9 +49,12 @@ const Header = () => {
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuLink className="px-4 py-2 text-sm hover:text-accent transition-colors rounded-lg hover:bg-accent/5">
+                  <Link 
+                    to="/contact"
+                    className="px-4 py-2 text-sm hover:text-accent transition-colors rounded-lg hover:bg-accent/5 block"
+                  >
                     Contact
-                  </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
