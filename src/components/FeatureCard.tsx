@@ -12,9 +12,9 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon }) =
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="bg-white p-8 rounded-2xl shadow-sm border border-primary-soft transition-all duration-300 hover:shadow-md"
+      className="bg-white p-8 rounded-2xl shadow-sm border border-accent-soft transition-all duration-300 hover:shadow-md hover:border-accent/20"
     >
-      <div className="mb-4 text-2xl">{icon}</div>
+      <div className="mb-4 text-2xl text-accent">{icon}</div>
       <h3 className="text-xl font-semibold mb-3">{title}</h3>
       <p className="text-gray-600 leading-relaxed">{description}</p>
     </motion.div>

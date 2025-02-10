@@ -31,8 +31,8 @@ export default {
           muted: "#f1f1f1",
         },
         accent: {
-          DEFAULT: "#eee",
-          soft: "#f5f5f5",
+          DEFAULT: "#0EA5E9",
+          soft: "#e0f2fe",
         },
       },
       keyframes: {

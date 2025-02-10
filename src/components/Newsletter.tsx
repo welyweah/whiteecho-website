@@ -15,11 +15,11 @@ const Newsletter = () => {
         <Input
           type="email"
           placeholder="Enter your email"
-          className="w-full px-4 py-3 rounded-lg bg-white border border-primary-soft focus:outline-none focus:ring-2 focus:ring-primary-soft transition-all duration-300"
+          className="w-full px-4 py-3 rounded-lg bg-white border border-accent-soft focus:outline-none focus:ring-2 focus:ring-accent transition-all duration-300"
         />
         <Button
           type="submit"
-          className="w-full bg-black text-white hover:bg-gray-900 transition-all duration-300 rounded-lg py-3"
+          className="w-full bg-accent text-white hover:bg-accent/90 transition-all duration-300 rounded-lg py-3"
         >
           Subscribe Now
         </Button>
