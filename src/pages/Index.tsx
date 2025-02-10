@@ -368,12 +368,22 @@ const Index = () => {
       <section className="py-24 px-4 sm:px-6 lg:px-8 relative bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-accent-gradient">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-accent-gradient"
+            >
               Powerful Features
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-xl text-gray-600 max-w-2xl mx-auto"
+            >
               Built with cutting-edge technology to help you achieve more
-            </p>
+            </motion.p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
@@ -436,7 +446,7 @@ const Index = () => {
                     <img
                       src={partner.logo}
                       alt={partner.alt}
-                      className={`w-full h-full object-contain ${partner.className || ''} opacity-70 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110 brightness-200`}
+                      className={`w-full h-full object-contain ${partner.className || ''} opacity-70 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110`}
                     />
                   </div>
                 </motion.div>
