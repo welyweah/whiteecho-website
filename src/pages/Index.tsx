@@ -338,7 +338,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white relative">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 relative bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-accent-gradient">
@@ -401,13 +401,25 @@ const Index = () => {
             <div className="absolute inset-0 bg-accent/5 rounded-3xl filter blur-2xl"></div>
             <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl p-12 border border-accent/10 shadow-xl">
               <div className="text-center max-w-2xl mx-auto space-y-6">
-                <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-accent-gradient">
-                  Stay Updated
-                </h2>
-                <p className="text-xl text-gray-600">
-                  Subscribe to our newsletter for the latest updates and insights.
-                </p>
-                <Newsletter />
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#398ae6] to-[#17d9d0]">
+                    Stay Updated
+                  </h2>
+                  <p className="mt-4 text-xl text-gray-600">
+                    Subscribe to our newsletter for the latest updates and insights.
+                  </p>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <Newsletter />
+                </motion.div>
               </div>
             </div>
           </div>
