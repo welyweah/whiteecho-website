@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Diamond } from 'lucide-react';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -46,7 +45,11 @@ const Contact = () => {
             className="flex justify-center items-center"
           >
             <div className="p-8 bg-accent/5 rounded-full">
-              <Diamond className="w-24 h-24 text-accent animate-pulse" />
+              <img 
+                src="/lovable-uploads/82b5d2d5-0952-4067-aaac-ab635cd345a7.png" 
+                alt="Logo" 
+                className="w-24 h-24 animate-pulse"
+              />
             </div>
           </motion.div>
 
