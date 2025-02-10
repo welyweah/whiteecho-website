@@ -7,6 +7,29 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const About = () => {
+  const teamMembers = [
+    {
+      image: "/lovable-uploads/2650925b-c7c9-423f-aa75-06dba1eb2d2a.png",
+      title: "Lead AI Architect",
+      description: "Pioneering next-generation AI solutions for enterprise applications."
+    },
+    {
+      image: "/lovable-uploads/8f0f0b48-063d-4d6c-a9c0-4649c235f949.png",
+      title: "Innovation Director",
+      description: "Driving technological advancement and creative problem-solving."
+    },
+    {
+      image: "/lovable-uploads/0689431c-e143-46d5-81fc-c296cbab0c2c.png",
+      title: "Technical Lead",
+      description: "Orchestrating complex technical implementations and system architecture."
+    },
+    {
+      image: "/lovable-uploads/d961b03f-04a9-4792-8828-fb59f54586ae.png",
+      title: "Product Strategist",
+      description: "Shaping the future of AI products with strategic vision and insight."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-primary-soft">
       <Header />
@@ -67,20 +90,27 @@ const About = () => {
         >
           <h2 className="text-3xl font-semibold text-center mb-8">Our Team</h2>
           <div className="grid md:grid-cols-4 gap-8">
-            {[1, 2, 3, 4].map((index) => (
-              <div key={index} className="text-center">
-                <div className="mb-4">
+            {teamMembers.map((member, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 * (index + 1) }}
+                className="text-center group"
+              >
+                <div className="mb-4 relative overflow-hidden rounded-2xl">
                   <img 
-                    src={`/lovable-uploads/team-member-${index}.jpg`}
-                    alt={`Team Member ${index}`}
-                    className="w-full h-64 object-cover rounded-2xl"
+                    src={member.image}
+                    alt={member.title}
+                    className="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Team Member {index}</h3>
+                <h3 className="text-xl font-semibold mb-2 text-gray-800">{member.title}</h3>
                 <p className="text-gray-600">
-                  Passionate about creating innovative solutions that make a difference.
+                  {member.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
