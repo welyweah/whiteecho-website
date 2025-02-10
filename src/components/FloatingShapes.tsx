@@ -13,12 +13,12 @@ const FloatingShapes = () => {
           </linearGradient>
         </defs>
         {/* Generate nodes */}
-        {Array.from({ length: 30 }).map((_, i) => (
+        {Array.from({ length: 50 }).map((_, i) => (
           <motion.circle
             key={i}
             cx={Math.random() * 1000}
             cy={Math.random() * 1000}
-            r="3"
+            r="2.5"
             fill="url(#cerebralGradient)"
             initial={{ opacity: 0.3 }}
             animate={{
@@ -33,7 +33,7 @@ const FloatingShapes = () => {
           />
         ))}
         {/* Generate connecting lines */}
-        {Array.from({ length: 40 }).map((_, i) => (
+        {Array.from({ length: 80 }).map((_, i) => (
           <motion.line
             key={`line-${i}`}
             x1={Math.random() * 1000}
@@ -41,10 +41,10 @@ const FloatingShapes = () => {
             x2={Math.random() * 1000}
             y2={Math.random() * 1000}
             stroke="url(#cerebralGradient)"
-            strokeWidth="0.8"
+            strokeWidth="0.6"
             initial={{ opacity: 0 }}
             animate={{
-              opacity: [0, 0.15, 0],
+              opacity: [0, 0.2, 0],
             }}
             transition={{
               duration: 5,
